@@ -11,6 +11,7 @@ function Counter() {
     <div>
       <p>Value: {state}</p>
       <button onClick={() => setState((c) => c + 1)}>+</button>
+      {/* <button onClick={() => console.log("HEllo")}>+</button> */}
     </div>
   );
 }
