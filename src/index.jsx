@@ -3,13 +3,19 @@ import * as serviceWorker from "./serviceWorker";
 
 import Didact from "./didact";
 
-function App(props) {
-  return Didact.createElement("h1", null, "Hi ", props.name);
+/** @jsx Didact.createElement */
+function Counter() {
+  const [state, setState] = Didact.useState(1);
+
+  return (
+    <div>
+      <p>Value: {state}</p>
+      <button onClick={() => setState((c) => c + 1)}>+</button>
+    </div>
+  );
 }
 
-const element = Didact.createElement(App, {
-  name: "Hello Nick",
-});
+const element = <Counter />;
 
 const container = document.getElementById("root");
 
