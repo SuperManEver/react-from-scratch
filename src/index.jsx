@@ -3,12 +3,13 @@ import * as serviceWorker from "./serviceWorker";
 
 import Didact from "./didact";
 
-const element = Didact.createElement(
-  "div",
-  { id: "foo" },
-  Didact.createElement("a", null, "bar"),
-  Didact.createElement("b")
-);
+function App(props) {
+  return Didact.createElement("h1", null, "Hi ", props.name);
+}
+
+const element = Didact.createElement(App, {
+  name: "Hello Nick",
+});
 
 const container = document.getElementById("root");
 
